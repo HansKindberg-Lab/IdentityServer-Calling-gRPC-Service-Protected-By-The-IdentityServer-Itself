@@ -1,0 +1,12 @@
+{
+	"profiles": {
+		"Kestrel": {
+			"applicationUrl": "https://localhost:6001",
+			"commandName": "Project",
+			"dotnetRunMessages": "true",
+			"environmentVariables": {
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			}
+		}
+	}
+}

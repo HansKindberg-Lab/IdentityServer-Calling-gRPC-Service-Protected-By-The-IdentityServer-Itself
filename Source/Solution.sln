@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{C9CE3F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{815A030D-6B56-4935-BFCD-AFF44BD4392B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{1B24FB24-B272-4A7F-9A1E-69A9CEA92E2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{815A030D-6B56-4935-BFCD-AFF44BD4392B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{815A030D-6B56-4935-BFCD-AFF44BD4392B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{815A030D-6B56-4935-BFCD-AFF44BD4392B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B24FB24-B272-4A7F-9A1E-69A9CEA92E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B24FB24-B272-4A7F-9A1E-69A9CEA92E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B24FB24-B272-4A7F-9A1E-69A9CEA92E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B24FB24-B272-4A7F-9A1E-69A9CEA92E2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
