@@ -12,13 +12,13 @@ using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using Duende.IdentityServer;
 using Duende.IdentityServer.Services;
+using Grpc.Core;
 using Grpc.Net.Client;
 using Grpc.Services;
 
 namespace IdentityServerHost.Quickstart.UI
 {
     [SecurityHeaders]
-    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly IIdentityServerInteractionService _interaction;
@@ -34,6 +34,7 @@ namespace IdentityServerHost.Quickstart.UI
             _tools = tools;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             if (_environment.IsDevelopment())
@@ -49,6 +50,7 @@ namespace IdentityServerHost.Quickstart.UI
         /// <summary>
         /// Shows the error page
         /// </summary>
+        [AllowAnonymous]
         public async Task<IActionResult> Error(string errorId)
         {
             var vm = new ErrorViewModel();
@@ -69,14 +71,25 @@ namespace IdentityServerHost.Quickstart.UI
             return View("Error", vm);
         }
 
+        [Authorize]
         public async Task<IActionResult> ServiceResult()
         {
 	        using (var channel = GrpcChannel.ForAddress("https://localhost:6001"))
 	        {
-		        var client = new Service.ServiceClient(channel);
-		        var response = await client.GetAsync(new Request());
+		        ////var token = await _tools.IssueClientJwtAsync("this", 60);
+		        var token = await _tools.IssueJwtAsync(60, this.HttpContext.User.Claims);
 
-		        ViewBag.ServiceResult = response.Value;
+                var client = new Service.ServiceClient(channel);
+
+				var headers = new Metadata
+				{
+				 { "Authorization", $"Bearer {token}" }
+				};
+
+				var response = await client.GetAsync(new Request(), headers);
+				//var response = await client.GetAsync(new Request());
+
+                ViewBag.ServiceResult = response.Value;
 
 		        return View();
 	        }
