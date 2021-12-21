@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{10217EFA-589C-4C5F-B0A6-725BC58B0130}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\NuGet.config = ..\NuGet.config
+		..\ReadMe.md = ..\ReadMe.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Protos", "Protos", "{C9CE3F69-3B18-4A9B-9C5E-1B6133AB5177}"
+	ProjectSection(SolutionItems) = preProject
+		Protos\Service.proto = Protos\Service.proto
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{815A030D-6B56-4935-BFCD-AFF44BD4392B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{815A030D-6B56-4935-BFCD-AFF44BD4392B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815A030D-6B56-4935-BFCD-AFF44BD4392B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815A030D-6B56-4935-BFCD-AFF44BD4392B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815A030D-6B56-4935-BFCD-AFF44BD4392B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50DE4127-92CC-431D-B524-00DCB573023F}
+	EndGlobalSection
+EndGlobal
