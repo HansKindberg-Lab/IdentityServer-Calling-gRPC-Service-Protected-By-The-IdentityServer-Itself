@@ -55,10 +55,10 @@ namespace Service
 			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 				.AddJwtBearer(options =>
 				{
-					//options.Audience = "";
+					options.Audience = "https://localhost:5001/resources";
 					options.Authority = "https://localhost:5001";
 					//options.MapInboundClaims = false;
-					options.TokenValidationParameters.ValidateAudience = false;
+					//options.TokenValidationParameters.ValidateAudience = false;
 					options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
 				});
 

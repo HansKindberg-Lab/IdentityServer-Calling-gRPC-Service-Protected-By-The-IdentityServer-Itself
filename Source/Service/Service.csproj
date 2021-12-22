@@ -5,7 +5,9 @@
 	<ItemGroup>
 		<PackageReference Include="Grpc.AspNetCore" Version="2.41.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.13" />
+		<!--
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
+		-->
 	</ItemGroup>
 	<ItemGroup>
 		<Protobuf Include="..\Protos\Service.proto" GrpcServices="Server" Link="Protos\Service.proto" />

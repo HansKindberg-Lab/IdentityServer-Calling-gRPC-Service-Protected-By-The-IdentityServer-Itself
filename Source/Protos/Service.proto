@@ -7,7 +7,7 @@ package grpc.services;
 message Request {}
 
 message Response {
-	string value = 1;
+	repeated string values = 1;
 }
 
 service Service {

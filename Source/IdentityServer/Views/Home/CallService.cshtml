@@ -1,0 +1,41 @@
+<div>
+	<h1>Call service</h1>
+	@if(ViewBag.Error != null)
+	{
+		<div class="alert alert-danger">
+			<h2>Error</h2>
+			<p>@ViewBag.Error</p>
+		</div>
+	}
+	else if(ViewBag.Warning != null)
+	{
+		<div class="alert alert-warning">
+			<h2>Warning</h2>
+			<p>@ViewBag.Warning</p>
+		</div>
+	}
+	else
+	{
+		var values = (ViewBag.Result as IEnumerable<string> ?? Enumerable.Empty<string>()).ToArray();
+
+		if(values.Any())
+		{
+			<div class="alert alert-info">
+				<h2>Result</h2>
+				<ul>
+					@foreach(var value in values)
+					{
+						<li>@value</li>
+					}
+				</ul>
+			</div>
+		}
+		else
+		{
+			<div class="alert alert-warning">
+				<h2>Warning</h2>
+				<p>No claims returned.</p>
+			</div>
+		}
+	}
+</div>
